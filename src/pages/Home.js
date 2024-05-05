@@ -12,8 +12,8 @@ import {
 } from "../components/auth/AuthProvider";
 
 const Home = () => {
-  const { SalesData } = useSalesData();
-  const { InventoryData } = useInventoryData();
+  const { SalesData, loadedSales } = useSalesData();
+  const { InventoryData, loadedInventory } = useInventoryData();
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -29,11 +29,11 @@ const Home = () => {
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-6">Inventory Overview</h2>
-      {SalesData && InventoryData ? (
+
+      {loadedInventory && loadedSales ? (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SalesRevenueWidget />
-
             <TopProductsWidget />
           </div>
 
@@ -44,11 +44,23 @@ const Home = () => {
         </>
       ) : (
         <div>
-          <h1>no data found</h1>
+          <h1>
+            No data found,upload
+            {!loadedInventory && loadedSales && (
+              <span className="text-red-500"> Inventory data </span>
+            )}
+            {!loadedSales && loadedInventory && (
+              <span className="text-red-500"> Sales data </span>
+            )}
+            {!loadedSales && !loadedInventory && (
+              <span className="text-red-500">
+                {" "}
+                Inventory data and Sales Data
+              </span>
+            )}
+          </h1>
         </div>
       )}
-
-      <div></div>
     </div>
   );
 };

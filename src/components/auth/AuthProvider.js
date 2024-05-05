@@ -16,6 +16,9 @@ export const AuthProvider = ({ children }) => {
   const [salesData, setSalesData] = useState([{}]);
   const [inventoryData, setInventoryData] = useState([{}]);
   const [loading, setLoading] = useState(true);
+  const [loadedSales, setLoadedSales] = useState(false);
+  const [loadedInventory, setLoadedInventory] = useState(false);
+
   const [unsubscribe, setUnsubscribe] = useState(null);
 
   async function getSalesData() {
@@ -27,6 +30,7 @@ export const AuthProvider = ({ children }) => {
 
       if (salesDocSnap.exists()) {
         setSalesData(data.data);
+        setLoadedSales(true);
       } else {
         console.error("Sales document does not exist");
       }
@@ -44,6 +48,7 @@ export const AuthProvider = ({ children }) => {
 
       if (inventoryDocSnap.exists()) {
         setInventoryData(data.data);
+        setLoadedInventory(true);
       } else {
         console.error("Inventory document does not exist");
       }
@@ -83,12 +88,15 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     getCurrentUser();
-    getInventoryData();
-    getSalesData();
+
     return () => {
       if (unsubscribe) unsubscribe(); // Call the unsubscribe function if it exists
     };
   }, []);
+  useEffect(() => {
+    getInventoryData();
+    getSalesData();
+  }, [currentUser]);
 
   const authValues = {
     currentUser,
@@ -98,9 +106,11 @@ export const AuthProvider = ({ children }) => {
 
   const inventoryDataValues = {
     InventoryData: inventoryData,
+    loadedInventory,
   };
 
   const salesDataValues = {
+    loadedSales,
     SalesData: salesData,
   };
 
