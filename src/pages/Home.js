@@ -1,12 +1,40 @@
-import React from "react";
-import { useAuth } from "../components/auth/AuthProvider";
+import React, { useState } from "react";
+import WidgetDropdown from "../components/Dashboard/WidgetDropdown";
+import SalesRevenueWidget from "../components/Dashboard/Widgets/SalesRevenue";
+import SalesRevenue from "../Graphs/SalesRevenue";
+import { SalesData } from "../database/SalesData";
+import TopProductsWidget from "../components/Dashboard/Widgets/TopProductsWidget";
+import SalesPerformanceComparisonWidget from "../components/Dashboard/Widgets/SalesPerformanceComparisonWidget";
+import InventoryWidget from "../components/Dashboard/Widgets/InventoryWidget";
 
 const Home = () => {
-  const { currentUser, loading } = useAuth();
-  console.log(currentUser);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown((prevState) => !prevState);
+  };
+
+  const handleWidgetSelect = (widgetId) => {
+    // Logic to handle widget selection
+    console.log("Selected Widget:", widgetId);
+    // Implement logic to add the selected widget to the dashboard
+  };
+
   return (
-    <div className="">
-      <h1>hello, {currentUser?.email}</h1>
+    <div className="p-6">
+      <h2 className="text-2xl font-bold mb-6">Inventory Overview</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <SalesRevenueWidget />
+
+        <TopProductsWidget />
+      </div>
+
+      <div className=" grid grid-cols-2 gap-6 space-x-4 bg-white mt-6 rounded-lg shadow-md ">
+        <SalesPerformanceComparisonWidget />
+        <InventoryWidget />
+      </div>
+      <div></div>
     </div>
   );
 };

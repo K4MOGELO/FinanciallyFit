@@ -10,6 +10,10 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import { AuthProvider, useAuth } from "./components/auth/AuthProvider";
+import Navbar from "./components/Layout/Navbar";
+import Layout from "./components/Layout/Layout";
+import Inventory from "./pages/Inventory";
+import Settings from "./pages/Settings";
 
 const App = () => {
   return (
@@ -21,15 +25,11 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
 
-          <Route
-            path="/"
-            element={
-              <PrivateRoute>
-                <Home />
-              </PrivateRoute>
-            }
-          />
-
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />{" "}
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/settings" element={<Settings />} />
+          </Route>
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>
       </Router>
@@ -38,14 +38,13 @@ const App = () => {
 };
 
 const PrivateRoute = ({ children }) => {
-  const { currentUser, loading } = useAuth();
-  if (loading) {
-    return <h1>loading</h1>; // Redirect to login on unauthorized access
-  }
-  if (!currentUser) {
-    return <Navigate to="/landing" replace />; // Redirect to login on unauthorized access
-  }
-  return children; // Render the protected route content if logged in
+  // Return the Navbar and children components for authenticated users
+  return (
+    <div>
+      <Navbar />
+      {children}
+    </div>
+  );
 };
 
 export default App;
