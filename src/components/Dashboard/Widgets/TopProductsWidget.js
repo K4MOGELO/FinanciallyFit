@@ -1,9 +1,11 @@
 import React from "react";
-import { InventoryData } from "../../../database/Inventory";
-import { SalesData } from "../../../database/SalesData";
+import { useInventoryData, useSalesData } from "../../auth/AuthProvider";
 
 const TopSoldProductsWidget = () => {
+  const { SalesData } = useSalesData();
+  const { InventoryData } = useInventoryData();
   // Merge sales and inventory data based on product code
+  
   const mergedData = InventoryData.map((inventoryItem) => {
     const salesItem = SalesData.find(
       (sale) => sale.productCode === inventoryItem.productCode

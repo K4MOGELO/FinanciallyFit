@@ -8,6 +8,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const { currentUser } = useAuth();
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -24,6 +25,10 @@ const SignIn = () => {
     }));
   };
 
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -35,7 +40,9 @@ const SignIn = () => {
       console.log("User logged in successfully");
       // Redirect user to another page if needed
 
-      navigate("/"); // Replace with your desired route after login
+      if (currentUser) {
+        navigate("/");
+      } // Replace with your desired route after login
     } catch (error) {
       setError(handleFirebaseError(error.code));
       setLoading(false);

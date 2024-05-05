@@ -1,8 +1,10 @@
 import React from "react";
 import SalesRevenue from "../../../Graphs/SalesRevenue"; // Assuming SalesRevenue component is in the correct path
-import { SalesData } from "../../../database/SalesData";
+import { useInventoryData, useSalesData } from "../../auth/AuthProvider";
 
 const SalesRevenueWidget = () => {
+  const { SalesData } = useSalesData();
+
   // Step 1: Transform Data
   const revenueByDate = SalesData.reduce((acc, sale) => {
     const date = sale.dateSold;
@@ -25,7 +27,7 @@ const SalesRevenueWidget = () => {
   return (
     <div className="bg-white border border-gray-200 rounded-md shadow-md p-4 ">
       <h2 className="text-lg font-semibold mb-4">Sales Revenue Over Time</h2>
-      <SalesRevenue data={revenueData} />
+      <SalesRevenue data={SalesData} />
     </div>
   );
 };

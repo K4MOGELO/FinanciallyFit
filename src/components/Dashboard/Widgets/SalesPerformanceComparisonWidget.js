@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import { SalesData } from "../../../database/SalesData";
+import { useInventoryData, useSalesData } from "../../auth/AuthProvider";
 
 const SalesPerformanceComparisonWidget = () => {
+  const { SalesData } = useSalesData();
+  const { InventoryData } = useInventoryData();
   const chartRef = useRef(null);
 
   useEffect(() => {

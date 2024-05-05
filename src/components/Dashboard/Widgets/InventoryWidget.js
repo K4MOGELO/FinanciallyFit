@@ -1,9 +1,10 @@
 import React from "react";
-import { InventoryData } from "../../../database/Inventory";
-import { SalesData } from "../../../database/SalesData";
+import { useInventoryData, useSalesData } from "../../auth/AuthProvider";
 
 const InventoryWidget = () => {
   // Total products in stock
+  const { SalesData } = useSalesData();
+  const { InventoryData } = useInventoryData();
   const totalProductsInStock = InventoryData.length;
 
   // Filter products running low on stock
@@ -13,7 +14,7 @@ const InventoryWidget = () => {
 
   // Find expired or expiring soon products
   const today = new Date();
-  const expiryThreshold = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days from today
+  const expiryThreshold = new Date(today.getTime() + 10 * 24 * 60 * 60 * 1000); // 30 days from today
   const expiredOrExpiringSoon = InventoryData.filter(
     (product) =>
       product.expiryDate && new Date(product.expiryDate) <= expiryThreshold
@@ -72,13 +73,8 @@ const InventoryWidget = () => {
           <ul>
             {expiredOrExpiringSoon.map((product) => (
               <li key={product.id}>
-                {product ? (
-                  <h1>
-                    {product.productName} (Expiry: {product.expiryDate})
-                  </h1>
-                ) : (
-                  <h1>N/A</h1>
-                )}
+                {product.productName} -{" "}
+                <span className="text-red-500">{product.expiryDate}</span>
               </li>
             ))}
           </ul>

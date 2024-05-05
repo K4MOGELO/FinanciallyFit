@@ -14,6 +14,8 @@ import Navbar from "./components/Layout/Navbar";
 import Layout from "./components/Layout/Layout";
 import Inventory from "./pages/Inventory";
 import Settings from "./pages/Settings";
+import Profile from "./pages/Profile";
+import Predictions from "./pages/Predictions";
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
             <Route path="/" element={<Home />} />{" "}
             <Route path="/inventory" element={<Inventory />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/predictions" element={<Predictions />} />
           </Route>
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>

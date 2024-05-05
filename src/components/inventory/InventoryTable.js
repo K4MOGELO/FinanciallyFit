@@ -1,8 +1,10 @@
 import React from "react";
-import { SalesData } from "../../database/SalesData";
-import { InventoryData } from "../../database/Inventory";
 
+import { useInventoryData, useSalesData } from "../auth/AuthProvider";
 const InventoryTable = ({ selectedTable }) => {
+  const { SalesData } = useSalesData();
+  const { InventoryData } = useInventoryData();
+
   // Get the column names from the first item in the salesData array
   let data;
   if (selectedTable === "sales") {
@@ -18,7 +20,7 @@ const InventoryTable = ({ selectedTable }) => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Sales Data</h1>
+      <h1 className="text-2xl font-bold p-4">{selectedTable} Data</h1>
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse">
           <thead>

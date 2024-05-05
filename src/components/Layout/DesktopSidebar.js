@@ -21,19 +21,14 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="px-4 py-2">
-            <Link to="/reports" className="text-white hover:bg-blue-700">
-              Reports
+            <Link to="/predictions" className="text-white hover:bg-blue-700">
+              Predictions
             </Link>
           </li>
 
           <li className="px-4 py-2">
             <Link to="/settings" className="text-white hover:bg-blue-700">
               Settings
-            </Link>
-          </li>
-          <li className="px-4 py-2">
-            <Link to="/logout" className="text-white hover:bg-blue-700">
-              Logout
             </Link>
           </li>
         </ul>

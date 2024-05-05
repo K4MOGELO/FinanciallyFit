@@ -2,9 +2,34 @@
 
 import React, { useState } from "react";
 import Sidebar from "./MobileSidebar";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [showSideBar, setShowSideBar] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleProfileClick = () => {
+    // Handle profile click action
+  };
+
+  const handleLogoutClick = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        navigate("/landing");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+    // Handle logout click action
+  };
   return (
     <>
       <nav className="fixed top-0 left-0 z-10 w-full bg-[#0091FF] py-4 px-6">
@@ -34,9 +59,38 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
-            {/* Your user avatar or icon */}
-            <div className="w-8 h-8 rounded-full bg-gray-500"></div>{" "}
+          <div className="relative">
+            {/* User avatar or icon */}
+            <img
+              src={
+                "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTPvFqD-oo4WMdikaau1qoCReBs1-aJSKEKRXubxk03-5MTDjJJ"
+              }
+              alt="Avatar"
+              className="w-10 h-10 rounded-full cursor-pointer"
+              onClick={toggleDropdown}
+            />
+            {/* Dropdown menu */}
+            {isOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                {/* Profile button */}
+                <Link to="/profile" className="text-white hover:bg-blue-700">
+                  <button
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                    onClick={handleProfileClick}
+                  >
+                    Profile
+                  </button>
+                </Link>
+
+                {/* Logout button */}
+                <button
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                  onClick={handleLogoutClick}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </nav>

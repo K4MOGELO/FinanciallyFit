@@ -6,7 +6,7 @@ export const InventoryData = [
     quantityInStock: 10,
     unitPrice: 999,
     supplier: "Apple Inc.",
-    expiryDate: null,
+    expiryDate: "2024-05-15", // Expiry date in ISO 8601 format
     category: "Electronics",
     location: "Warehouse A",
     dateAdded: "2023-01-01",
@@ -19,7 +19,9 @@ export const InventoryData = [
     quantityInStock: 200,
     unitPrice: 899,
     supplier: "Samsung Electronics",
-    expiryDate: null,
+
+    expiryDate: "2023-12-31", // Expiry date in ISO 8601 format
+
     category: "Electronics",
     location: "Warehouse A",
     dateAdded: "2023-01-05",
@@ -259,4 +261,4 @@ export const InventoryData = [
     dateAdded: "2023-06-15",
     lastUpdated: "2023-05-11",
   },
-];
+]

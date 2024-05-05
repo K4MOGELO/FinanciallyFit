@@ -16,7 +16,7 @@ const Inventory = () => {
   const [showUploadForm, setShowUploadForm] = useState(false);
 
   const handleAddDataClick = () => {
-    setShowUploadForm(true);
+    setShowUploadForm(!showUploadForm);
   };
 
   const handleUploadSubmit = (file) => {
@@ -48,13 +48,28 @@ const Inventory = () => {
       </div>
 
       {/* Add data button */}
-      <button
-        className="bg-blue-500 text-white px-4 py-2 rounded-md mr-4"
-        onClick={handleAddDataClick}
-      >
-        Add Data
-      </button>
-      {showUploadForm && <UploadDataForm onSubmit={handleUploadSubmit} />}
+      {showUploadForm ? (
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-md mr-4"
+          onClick={handleAddDataClick}
+        >
+          cancel
+        </button>
+      ) : (
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-md mr-4"
+          onClick={handleAddDataClick}
+        >
+          Add Data
+        </button>
+      )}
+
+      {showUploadForm && (
+        <UploadDataForm
+          selectedTable={selectedTable}
+          onSubmit={handleUploadSubmit}
+        />
+      )}
 
       {/* Placeholder for displaying selected table */}
       <div className=" border  border-gray-300 rounded-md  m-2">

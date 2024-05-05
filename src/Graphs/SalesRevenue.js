@@ -1,10 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
-import { SalesData } from "../database/SalesData";
 
-const SalesRevenue = () => {
+const SalesRevenue = ({ data }) => {
   const chartContainer = useRef(null);
-  const data = SalesData;
+
   const chartInstance = useRef(null);
 
   useEffect(() => {
