@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import WidgetDropdown from "../components/Dashboard/WidgetDropdown";
 import SalesRevenueWidget from "../components/Dashboard/Widgets/SalesRevenue";
-import SalesRevenue from "../Graphs/SalesRevenue";
-import { SalesData } from "../database/SalesData";
+
 import TopProductsWidget from "../components/Dashboard/Widgets/TopProductsWidget";
 import SalesPerformanceComparisonWidget from "../components/Dashboard/Widgets/SalesPerformanceComparisonWidget";
 import InventoryWidget from "../components/Dashboard/Widgets/InventoryWidget";

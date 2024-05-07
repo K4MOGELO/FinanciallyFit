@@ -40,8 +40,9 @@ export const AuthProvider = ({ children }) => {
   }
 
   async function getInventoryData() {
+    console.log(currentUser?.userId);
     try {
-      const inventoryDocRef = doc(db, "inventory", currentUser.userId);
+      const inventoryDocRef = doc(db, "inventory", currentUser?.userId);
 
       const inventoryDocSnap = await getDoc(inventoryDocRef);
       const data = inventoryDocSnap.data();
