@@ -1,0 +1,21 @@
+id,productName,productCode,quantityInStock,unitPrice,supplier,expiryDate,category,location,dateAdded,lastUpdated
+1,iPhone 13,IPH13-001,10,999,Apple Inc.,2024-20-15,Electronics,Warehouse A,2023-01-01,2023-04-20
+2,Samsung Galaxy S21,S21-002,200,899,Samsung Electronics,,Electronics,Warehouse A,2023-01-05,2023-04-22
+3,Dell XPS 15 Laptop,XPS15-003,100,1499,Dell Technologies,,Computers,Warehouse B,2023-02-10,2023-04-25
+4,Sony PlayStation 5,PS5-004,50,499,Sony Corporation,,Electronics,Warehouse C,2023-02-15,2023-04-23
+5,Nike Air Max 270,AM270-005,300,150,"Nike, Inc.",,Footwear,Warehouse D,2023-03-01,2023-04-21
+6,Apple AirPods Pro,APPRO-006,120,249,Apple Inc.,,Electronics,Warehouse A,2023-03-05,2023-04-24
+7,Canon EOS R5 Camera,EOSR5-007,80,3899,Canon Inc.,,Cameras,Warehouse E,2023-03-10,2023-04-26
+8,Samsung 65-inch QLED TV,QLED65-008,60,1799,Samsung Electronics,,Electronics,Warehouse F,2023-04-01,2023-04-27
+9,Amazon Kindle Paperwhite,KINDLE-009,90,129,"Amazon.com, Inc.",,Electronics,Warehouse G,2023-04-05,2023-04-28
+10,Fitbit Versa 3 Smartwatch,FITVS3-010,150,229,"Fitbit, Inc.",,Wearables,Warehouse H,2023-04-10,2023-04-29
+11,Microsoft Surface Pro 7,SURPRO7-011,70,899,Microsoft Corporation,,Computers,Warehouse B,2023-05-01,2023-05-02
+12,LEGO Star Wars Millennium Falcon,MILFALC-012,40,159.99,LEGO Group,2024-20-15,Toys,Warehouse I,2023-05-05,2023-05-03
+13,Instant Pot Duo Plus 9-in-1,IPDUO9-013,120,119.95,Instant Brands Inc.,,Home Appliances,Warehouse J,2023-05-10,2023-05-04
+14,Fujifilm Instax Mini 11,INSTAX11-014,100,69.95,Fujifilm Holdings Corporation,,Cameras,Warehouse E,2023-05-15,2023-05-05
+15,KitchenAid Artisan Stand Mixer,KASM-015,80,379,Whirlpool Corporation,,Kitchen Appliances,Warehouse K,2023-05-20,2023-05-06
+16,Bose QuietComfort 35 II Headphones,QC35II-016,100,299,Bose Corporation,,Electronics,Warehouse A,2023-05-25,2023-05-07
+17,Google Nest Hub (2nd Gen),NESTHUB-017,150,99.99,Google LLC,,Electronics,Warehouse L,2023-06-01,2023-05-08
+18,Yeti Rambler 20 oz Tumbler,RAMBLER-018,200,29.99,"YETI Holdings, Inc.",,Outdoor Gear,Warehouse M,2023-06-05,2023-05-09
+19,GoPro HERO9 Black,HERO9-019,60,399.99,"GoPro, Inc.",,Cameras,Warehouse E,2023-06-10,2023-05-10
+20,Anker PowerCore 20000mAh Portable Charger,PC20000-020,150,49.99,Anker Innovations,,Electronics,Warehouse A,2023-06-15,2023-05-11
