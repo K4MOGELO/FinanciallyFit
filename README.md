@@ -2,6 +2,10 @@
 
 Welcome to FinanciallyFit, your ultimate financial management tool for businesses. FinanciallyFit is designed to help you track expenses, manage budgets, and log your income with ease. Built with React and Tailwind, this application provides a seamless and user-friendly experience.
 
+## Website
+
+website link: [FinanciallyFit](https://financially-fit.vercel.app)
+
 ## Key Features
 
 - **Expense Tracking**: Easily track all your expenses and categorize them for better insights into your spending habits.
