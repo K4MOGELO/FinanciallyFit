@@ -30,6 +30,11 @@ _Dashboard_
 ![Manage Inventory](public/repo/InventoryScreenshot.jpg)
 _Inventory Page_
 
+Example Data CSV files :
+
+- [Inventory Data CSV](<public/repo/FinanciallyFit%20(InventoryData).csv>)
+- [Sales Data CSV](<public/repo/FinanciallyFitSalesData).csv>)
+
 ## Benefits
 
 - **Save Time**: Simplify your financial management process and save valuable time.
