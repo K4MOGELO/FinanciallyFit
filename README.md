@@ -17,11 +17,14 @@ Welcome to FinanciallyFit, your ultimate financial management tool for businesse
 
 ## Screenshots
 
+![Manage Inventory](public/repo/HomeScreenshot.jpg)
+_HOME Page_
+
 ![Dashboard](public/repo/DashboardScreenshot.jpg)
 _Dashboard_
 
 ![Manage Inventory](public/repo/InventoryScreenshot.jpg)
-_Inventory Page _
+_Inventory Page_
 
 ## Benefits
 
@@ -29,6 +32,6 @@ _Inventory Page _
 - **Improve Financial Health**: Gain insights into your spending habits and make informed financial decisions.
 - **Stay Organized**: Organize your expenses and budgets in one place for better financial organization.
 
-## About 
+## About
 
 FinanciallyFit was created to help you manage your finances and get rich with the power of machine learning. Our team is dedicated to providing the best tools to help you make informed financial decisions, improve your financial health, and achieve your financial goals. By leveraging advanced machine learning algorithms, we offer insights and predictions that empower you to optimize your spending, budgeting, and income management.
